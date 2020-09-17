@@ -2,6 +2,7 @@ package com.bmsjava.service;
 
 import java.util.ArrayList;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -35,9 +36,18 @@ public class JwtUserDetailsService implements UserDetailsService {
 	}
 
 	public DAOUser save(UserDTO user) {
-		DAOUser newUser = new DAOUser();
+		ModelMapper modelMapper = new ModelMapper();
+		DAOUser newUser = modelMapper.map(user, DAOUser.class);
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+		newUser.setAccountNumber(getAccountNumber());
 		return userDao.save(newUser);
+	}
+	
+	public String getAccountNumber()
+	{
+		int aNumber = 0;
+		aNumber = (int)((Math.random() * 9000000)+1000000);
+		return ""+aNumber;
 	}
 }

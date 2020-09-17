@@ -3,8 +3,8 @@ package com.bmsjava.model;
 import java.util.Date;
 
 public class UserDTO {
-	
-	private String name;
+	private long id;	
+	private String fullname;
 	private String username;
 	private String password;
 	private String guardianType;
@@ -28,12 +28,20 @@ public class UserDTO {
 	private String acHolderName;
 	private String acHolderAccNo;
 	private String acHolderAddr;
+	private String accountNumber;
 	
-	public String getName() {
-		return name;
+	
+	public long getId() {
+		return id;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getFullname() {
+		return fullname;
+	}
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 	public String getUsername() {
 		return username;
@@ -174,16 +182,25 @@ public class UserDTO {
 	public void setAcHolderAddr(String acHolderAddr) {
 		this.acHolderAddr = acHolderAddr;
 	}
+	
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
 	@Override
 	public String toString() {
-		return "UserDTO [name=" + name + ", username=" + username + ", password=" + password + ", guardianType="
-				+ guardianType + ", guardianName=" + guardianName + ", address=" + address + ", citizenship="
-				+ citizenship + ", state=" + state + ", country=" + country + ", emailAddress=" + emailAddress
-				+ ", gender=" + gender + ", maritalStatus=" + maritalStatus + ", contactNo=" + contactNo + ", dob="
-				+ dob + ", registrationDate=" + registrationDate + ", accountType=" + accountType + ", branchName="
-				+ branchName + ", citizenStatus=" + citizenStatus + ", amount=" + amount + ", idProofType="
-				+ idProofType + ", idDocNo=" + idDocNo + ", acHolderName=" + acHolderName + ", acHolderAccNo="
-				+ acHolderAccNo + ", acHolderAddr=" + acHolderAddr + "]";
+		return "UserDTO [id=" + id + ", fullname=" + fullname + ", username=" + username + ", password=" + password
+				+ ", guardianType=" + guardianType + ", guardianName=" + guardianName + ", address=" + address
+				+ ", citizenship=" + citizenship + ", state=" + state + ", country=" + country + ", emailAddress="
+				+ emailAddress + ", gender=" + gender + ", maritalStatus=" + maritalStatus + ", contactNo=" + contactNo
+				+ ", dob=" + dob + ", registrationDate=" + registrationDate + ", accountType=" + accountType
+				+ ", branchName=" + branchName + ", citizenStatus=" + citizenStatus + ", amount=" + amount
+				+ ", idProofType=" + idProofType + ", idDocNo=" + idDocNo + ", acHolderName=" + acHolderName
+				+ ", acHolderAccNo=" + acHolderAccNo + ", acHolderAddr=" + acHolderAddr + ", accountNumber="
+				+ accountNumber + "]";
 	}
+	
 	
 }

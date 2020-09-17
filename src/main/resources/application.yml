@@ -5,14 +5,11 @@ jwt.secret: secret
   
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: 
+    url: jdbc:mysql://localhost:3306/bms
+    username: root
+    password: pass@word1
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
-      path: /h2-console/
-
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    

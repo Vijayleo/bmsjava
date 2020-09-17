@@ -13,10 +13,10 @@ public class DAOUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	private String fullname;
 	private String username;
 	@JsonIgnore
 	private String password;
-	private String name;
 	private String guardianType;
 	private String guardianName;
 	private String address;
@@ -34,10 +34,11 @@ public class DAOUser {
 	private String citizenStatus;
 	private long amount;
 	private String idProofType;
-	private String idDocType;
+	private String idDocNo;
 	private String acHolderName;
 	private String acHolderAccNo;
 	private String acHolderAddr;
+	private String accountNumber;
 	public long getId() {
 		return id;
 	}
@@ -56,11 +57,12 @@ public class DAOUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getName() {
-		return name;
+
+	public String getFullname() {
+		return fullname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 	public String getGuardianType() {
 		return guardianType;
@@ -164,11 +166,12 @@ public class DAOUser {
 	public void setIdProofType(String idProofType) {
 		this.idProofType = idProofType;
 	}
-	public String getIdDocType() {
-		return idDocType;
+	
+	public String getIdDocNo() {
+		return idDocNo;
 	}
-	public void setIdDocType(String idDocType) {
-		this.idDocType = idDocType;
+	public void setIdDocNo(String idDocNo) {
+		this.idDocNo = idDocNo;
 	}
 	public String getAcHolderName() {
 		return acHolderName;
@@ -188,16 +191,26 @@ public class DAOUser {
 	public void setAcHolderAddr(String acHolderAddr) {
 		this.acHolderAddr = acHolderAddr;
 	}
+	
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
 	@Override
 	public String toString() {
-		return "DAOUser [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name
+		return "DAOUser [id=" + id + ", fullname=" + fullname + ", username=" + username + ", password=" + password
 				+ ", guardianType=" + guardianType + ", guardianName=" + guardianName + ", address=" + address
 				+ ", citizenship=" + citizenship + ", state=" + state + ", country=" + country + ", emailAddress="
 				+ emailAddress + ", gender=" + gender + ", maritalStatus=" + maritalStatus + ", contactNo=" + contactNo
 				+ ", dob=" + dob + ", registrationDate=" + registrationDate + ", accountType=" + accountType
 				+ ", branchName=" + branchName + ", citizenStatus=" + citizenStatus + ", amount=" + amount
-				+ ", idProofType=" + idProofType + ", idDocType=" + idDocType + ", acHolderName=" + acHolderName
-				+ ", acHolderAccNo=" + acHolderAccNo + ", acHolderAddr=" + acHolderAddr + "]";
+				+ ", idProofType=" + idProofType + ", idDocNo=" + idDocNo + ", acHolderName=" + acHolderName
+				+ ", acHolderAccNo=" + acHolderAccNo + ", acHolderAddr=" + acHolderAddr + ", accountNumber="
+				+ accountNumber + "]";
 	}
+	
+	
 
 }
